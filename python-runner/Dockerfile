@@ -1,4 +1,9 @@
 FROM gliderlabs/alpine:3.1
-RUN apk --update add python
 
-#RUN pip install virtualenv
+RUN apk add --update \
+    python \
+    python-dev \
+    py-pip \
+    build-base \
+  && pip install virtualenv \
+  && rm -rf /var/cache/apk/*
